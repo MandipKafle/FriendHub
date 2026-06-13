@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-[#fafafa] text-black antialiased font-sans;
+  }
+}
+
+/* Minimal utility customizations matching 4px border-radius requirements */
+.rounded {
+  border-radius: 4px;
+}
+.rounded-md {
+  border-radius: 4px;
+}
+.rounded-lg {
+  border-radius: 4px;
+}
