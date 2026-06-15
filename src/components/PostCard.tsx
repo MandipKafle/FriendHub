@@ -19,9 +19,10 @@ interface PostCardProps {
 
 export function PostCard({ post, currentUserId }: PostCardProps) {
   const isAuthor = currentUserId === post.author.id;
-  const formattedDate = new Date(post.createdAt).toLocaleString(undefined, {
+  const formattedDate = new Date(post.createdAt).toLocaleString("en-NP", {
     dateStyle: "medium",
     timeStyle: "short",
+    timeZone: "Asia/Kathmandu",
   });
 
   return (
@@ -46,7 +47,9 @@ export function PostCard({ post, currentUserId }: PostCardProps) {
             >
               {post.author.name}
             </Link>
-            <span className="text-xs text-gray-500 ml-1">@{post.author.username}</span>
+            <span className="text-xs text-gray-500 ml-1">
+              @{post.author.username}
+            </span>
             <span className="text-xs text-gray-400 mx-1.5">•</span>
             <span className="text-[10px] text-gray-400">{formattedDate}</span>
           </div>
@@ -63,7 +66,9 @@ export function PostCard({ post, currentUserId }: PostCardProps) {
           </form>
         )}
       </div>
-      <p className="text-sm text-black leading-relaxed whitespace-pre-wrap">{post.content}</p>
+      <p className="text-sm text-black leading-relaxed whitespace-pre-wrap">
+        {post.content}
+      </p>
     </div>
   );
 }
